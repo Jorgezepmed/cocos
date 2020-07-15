@@ -1,0 +1,57 @@
+{% extends 'base_home.html' %}
+{% load static %}
+
+{% block titulo %}
+    Operadores
+{% endblock titulo %}
+
+{% block cuerpo %}
+{% include 'Left_column.html' %}
+
+<div class="templatemo-content col-1 light-gray-bg">
+  <!-- Barra -->
+  <div class="templatemo-top-nav-container">
+    <div class="row">
+      <nav class="templatemo-top-nav col-lg-12 col-md-12">
+        <ul class="text-uppercase">
+          <!-- <li><a href="" class="active">Admin panel</a></li> -->
+          <li><a href="{% url 'empleado_app:add' %}"></i>Agregar nuevo</a></li>
+          <li><a href="login.html">Formulario de registro</a></li>
+        </ul>  
+      </nav> 
+    </div>
+  </div>
+  
+    <div class="templatemo-content-container">
+          <div class="templatemo-content-widget no-padding">
+            <div class="panel panel-default table-responsive">
+              <table class="table table-striped table-bordered templatemo-user-table">
+                <thead>
+                  <tr>
+                   
+                    <td><a href="" class="white-text templatemo-sort-by">Nombre <span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Apellidos <span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Celular <span class="caret"></span></a></td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for empleados in lista_empleados  %}
+                  <tr>
+                   
+                    <td>{{ empleados.name }}</td>
+                    <td>{{ empleados.last_name }}</td>
+                    <td>{{ empleados.cel }}</td>
+                    <td><a class="templatemo-edit-btn" href=" {% url 'empleado_app:modificar_empleado' empleados.id  %} " >Edit</a></td>
+                    <td><a class="templatemo-action-btn"  href= "{% url 'empleado_app:eliminar_empleado' empleados.id %} " >Delete</a></td>
+                  </tr>
+                  {% endfor %}
+                          
+                </tbody>
+              </table>    
+            </div>                          
+          </div>    
+
+{% endblock cuerpo %}    
+

@@ -1,0 +1,55 @@
+{% extends 'base_home.html' %}
+{% load static %}
+
+{% block titulo %}
+    Agregar Operador
+{% endblock titulo %}
+
+{% block cuerpo %}
+{% include 'Left_column.html' %}
+<div class="templatemo-content col-1 light-gray-bg">
+<div class="templatemo-content-container">
+    <div class="templatemo-content-widget white-bg">
+      <h2 class="margin-bottom-10">Agregar nuevo operador</h2>
+      <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+      <!-- <p>Here goes another form and form controls.</p> -->
+        <div class="row form-group">
+          <div class="col-lg-6 col-md-6 form-group">                  
+              <label for="inputFirstName" >Nombre </label> 
+                <input  class="form-control" placeholder="Sergio" {{form.name}} 
+          </div>
+          <div class="col-lg-6 col-md-6 form-group">                  
+              <label for="inputLastName" >Apellidos </label>
+              <input class="form-control" placeholder="Sanchez" {{form.last_name}} 
+               
+                       
+          </div> 
+        </div>
+        <div class="row form-group">
+          <div class="col-lg-6 col-md-6 form-group">                  
+              <label for="inputUsername">Celular </label>  
+              <input class="form-control" placeholder="4447664290" {{form.cel}}    
+              
+                         
+          </div>
+
+          <div class="row form-group">
+            <div class="col-lg-6 col-md-6 form-group">                  
+                <label for="inputUsername"> Foto: </label>  
+                <input class="form-control"  {{form.avatar}}    
+                
+                           
+            </div>
+
+
+
+    <div class="form-group text-right">
+      <button type="submit" class="templatemo-blue-button">Agregar</button>
+    </div> 
+    
+
+</form>
+
+{% endblock cuerpo %}    
+
+

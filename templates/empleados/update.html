@@ -1,0 +1,22 @@
+{% extends 'base_home.html' %}
+{% load static %}
+
+{% block titulo %}
+    Modificar operador
+{% endblock titulo %}
+
+{% block cuerpo %}
+{% include 'Left_column.html' %}
+<div class="templatemo-content col-1 light-gray-bg">
+    <div class="templatemo-content-container">
+        <div class="templatemo-content-widget white-bg">
+        <h2 class="margin-bottom-10">Modificar operador</h2><hr>
+            <form method="POST"> {% csrf_token %}
+                {{ form}}
+                <button type="submit" class="templatemo-blue-button"> Actualizar </button>
+            </form>
+        </div>
+    </div>       
+</div>
+
+{% endblock cuerpo %}   

@@ -1,0 +1,34 @@
+{% extends 'base_home.html' %}
+{% load static %}
+
+{% block titulo %}
+    Agregar Ruta
+{% endblock titulo %}
+
+{% block cuerpo %}
+{% include 'Left_column.html' %}
+
+
+
+<div class="templatemo-content col-1 light-gray-bg">
+    <div class="templatemo-content-container">
+        <div class="templatemo-content-widget white-bg">
+          <h2 class="margin-bottom-10">Agregar nueva Ruta </h2>
+          <form method="POST"> {% csrf_token %}
+          <!-- <p>Here goes another form and form controls.</p> -->
+            <div class="row form-group">
+              <div class="col-lg-6 col-md-6 form-group">                  
+                  <label for="inputFirstName" >  </label> 
+                    <!-- <input  class="form-control"  -->
+                    {{form}} 
+              </div>    
+    
+        <div class="form-group text-left">
+          <button type="submit" class="templatemo-blue-button">Agregar</button>
+        </div> 
+        
+    
+    </form>
+
+{% endblock cuerpo %}    
+
