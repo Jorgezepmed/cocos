@@ -3,7 +3,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['67.205.174.67']
+ALLOWED_HOSTS = []
 
 
 
@@ -19,7 +19,7 @@ DATABASES = {
         'USER': 'jorge',
         'PASSWORD': 'toroe',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
